@@ -1,0 +1,14 @@
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<form method="POST" onsubmit="return valid()" novalidate>
+    {%csrf_token%}
+    <table border="1" cellspacing="3px">
+    {{ form.as_table }}
+    <tr>
+        <td><input type="submit" value="save"></td>
+    </tr>
+    </table>
+</form>
+<script src="static/js/script.js"></script>
