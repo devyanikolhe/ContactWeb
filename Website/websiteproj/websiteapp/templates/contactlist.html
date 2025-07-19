@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<table border="1" cellspacing="3px" class="contact-table">
+    <tr>
+        <th>ID</th>
+        <th>FIRSTNAME</th>
+        <th>LASTNAME</th>
+        <th>ADDRESS</th>
+        <th>EMAIL</th>
+        <th>CONTACT</th>
+        <th colspan="2">ACTIONS</th>
+        
+        
+    </tr>
+    
+    {%for i in el%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.firstname}}</td>
+        <td>{{i.lastname}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.phone}}</td>
+        <td><a href="Edit/{{i.id}}" class="action-link">Edit</a></td>
+        <td><a href="delete/{{i.id}}" class="action-link">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+
+
